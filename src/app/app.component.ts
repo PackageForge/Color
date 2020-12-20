@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Color } from 'projects/color/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Color';
+  Color = Color;
+  colors = Color.namedColorList().map(name => Color.parse(name)).concat([new Color(0, 0, 1)]);
 }
